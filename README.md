@@ -6,7 +6,7 @@
 <img src="QuestionGeneration.png" width="700">
 <img src="Caption.png" width="700">
 
-This is the code for <a href="https://arxiv.org/abs/2210.08773">Img2Prompt-VQA paper</a>. We integrate the implementation into LAVIS.
+This is the code for <a href="https://openreview.net/forum?id=Ck1UtnVukP8&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2023%2FConference%2FAuthors%23your-submissions)">Img2Prompt-VQA paper</a>. We integrate the implementation into LAVIS.
 
 ### Demo
 We include an interactive demo [Colab notebook](https://colab.research.google.com/github/salesforce/LAVIS/blob/main/projects/img2prompt-vqa/img2prompt_vqa.ipynb)
