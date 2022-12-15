@@ -32,7 +32,7 @@ to show Img2Prompt-VQA inference workflow:
 </thead>
 <tbody>
   <tr>
-    <td> Frozen-7B<sub>base</sub> </td>
+    <td> Frozen-7B</td>
     <td> ✓ </td> 
     <td>29.5</td>
     <td>-</td>
@@ -41,7 +41,7 @@ to show Img2Prompt-VQA inference workflow:
 <td>-</td>
   </tr>
 <tr>
-    <td> Flamingo-9B<sub>base</sub> </td>
+    <td> Flamingo-9B </td>
     <td> ✓</td> 
     <td>-</td>
     <td>51.8</td>
@@ -50,7 +50,7 @@ to show Img2Prompt-VQA inference workflow:
 <td>-</td>
   </tr>
   <tr>
-    <td> Flamingo-80B<sub>base</sub> </td>
+    <td> Flamingo-80B</td>
     <td>✓</td> 
     <td>-</td>
     <td>56.3</td>
