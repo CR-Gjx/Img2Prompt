@@ -2,7 +2,6 @@
 
 ## From Images to Textual Prompts: Zero-shot VQA with Frozen Large Language Models
 
-## Coming Soon!
 
 <img src="Illustration.png" width="700">
 <img src="QuestionGeneration.png" width="700">
