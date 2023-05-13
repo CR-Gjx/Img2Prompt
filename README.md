@@ -98,7 +98,7 @@ to show Img2Prompt-VQA inference workflow:
 </tbody>
 </table>
 
-To reproduce these evaluation results of Img2Prompt-VQA with different LLMs, you can follow the next steps:
+To reproduce these evaluation results of Img2LLM-VQA with different LLMs, you can follow the next steps:
 
 Firstly, you should download the generated caption question files from this [link](https://drive.google.com/drive/folders/1KbBrWTac5YuG_b6CVEWM4jYwpR_YbcEO?usp=sharing). For example, you can download 'okvqa_question.json', 'okvqa_caption.json' and 'okvqa_ans_to_cap_dict.json' for reproducing results of okvqa results.
 
