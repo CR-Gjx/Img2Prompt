@@ -100,10 +100,23 @@ to show Img2Prompt-VQA inference workflow:
 
 To reproduce these evaluation results of Img2Prompt-VQA with different LLMs, you can follow the next steps:
 
+Firstly, you should download the generated caption question files from this [link](https://drive.google.com/drive/folders/1KbBrWTac5YuG_b6CVEWM4jYwpR_YbcEO?usp=sharing). For example, you can download 'okvqa_question.json', 'okvqa_caption.json' and 'okvqa_ans_to_cap_dict.json' for reproducing results of okvqa results.
+
+Then you can run the shell in folder VL_captioning to reproduce results, e.g.
+```
+$ ./run_okvqa.sh
+```
+
 
 ### Citation
 If you find this code to be useful for your research, please consider citing.
-```bibtex
+```
+@article{guo2022images,
+  title={From Images to Textual Prompts: Zero-shot VQA with Frozen Large Language Models},
+  author={Guo, Jiaxian and Li, Junnan and Li, Dongxu and Tiong, Anthony Meng Huat and Li, Boyang and Tao, Dacheng and Hoi, Steven CH},
+  journal={arXiv preprint arXiv:2212.10846},
+  year={2022}
+}
 
 ```
 

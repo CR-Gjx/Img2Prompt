@@ -1,0 +1,92 @@
+train_file: '../annotation_new/okvqa_train.json'
+val_file: ['../annotation_new/okvqa_train.json']
+test_file: ['../annotation_new/okvqa_val_eval.json']
+
+
+val_ann_path: '../annotation_new/mscoco_val2014_annotations.json'
+val_ques_path: '../annotation_new/OpenEnded_mscoco_val2014_questions.json'
+
+
+answer_list: '../annotation_new/answer_list.json'
+
+is_vit: false
+
+use_test_transform: false
+dataset: 'okvqa' #'vqa_few_shot'
+
+image_res: 224
+num_image_token: 2
+batch_size_train: 2
+batch_size_val: 64
+batch_size_test: 64 #3 #64 for 'generate' inference; #3 for 'rank' inference using 49 image token, 8 for 2 img token
+k_test: 128
+concat_vis_pos: null # will get updated by argparser
+concat_eos_pos: null # will get updated by argparser
+
+text_first: false
+inference: 'generate' #'generate' #'rank'
+rank_style: 'sum'
+skip_vis_enc: false
+num_beams: 1 #default setting
+early_stopping: false #default setting, set to true during beam search
+no_repeat_ngram_size: 0 #default setting, set to 2 during beam search
+
+do_sample: false #default setting
+top_k: 50 #default setting
+min_answer_length: 0 #default setting
+max_answer_length: 20 #default setting
+
+checkpoint: '' # will get updated by argparser
+prompt_question: '' # will get updated by argparser; # 'context: question: '
+prompt_answer: '' # will get updated by argparser # ' answer:'
+context_prompt_len: 0
+with_visual_input: true
+with_visual_embedding: true
+pretrained_visual_encoder: true
+
+lm_config: './Pretrain/T0_3B/config.json'
+tokenizer: './Pretrain/T0_3B'
+lm_ckpt: './Pretrain/T0_3B'
+
+use_amp: false
+tune_layer_norm: false
+tune_both: false
+tune_emb: false
+tune_t0_block: false
+tune_t0_2block: false
+num_enc_tune: 0
+num_dec_tune: 0
+# few shot training
+max_epoch: 200
+optimizer: adam
+lr: 6e-4 #6e-4 for adam #sgd uses 5e-4 based on 3e-4 for bsz1536   #lars 0.075 * sqrt(batch_size)
+weight_decay: 0.02 #for 1e-6 lars, 1e-4 sgd, 0.02 for adamW
+use_scheduler: false
+scheduler_type: cosine
+scheduler: {sched: step, lr: 2e-4, epochs: 30, decay_epochs: 1, decay_rate: 0.85, warmup_lr: 1e-6, warmup_epochs: 30, cooldown_epochs: 0}
+
+#lars_scheduler is used for lars, sgd and adam
+#lars_scheduler: {final_lr: 0, warmup_epochs: 5, warmup_lr: 5e-6} #3e-4
+lars_scheduler: {final_lr: 0, warmup_epochs: 5, warmup_lr: 0} #3e-4
+
+# adam setting and adamW setting
+beta_1: 0.9
+beta_2: 0.95
+beta: (0.9, 0.95)
+
+# adamW setting (0.9, 0.999) is default value for both adam and adamw
+beta_1w: 0.9
+beta_2w: 0.95
+
+
+# sgd setting
+momentum: 0.9
+sgd_scheduler: {sched: step, decay_epoch_1: 15, decay_epoch_2: 25, gamma: 0.1} #step at around (0.5, 0.875)*total_epoch
+
+# few shot
+max_words: 30
+num_sample: 16
+split_seed: 0 #will get updated by argparser
+
+
+
